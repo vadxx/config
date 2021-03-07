@@ -2,7 +2,7 @@
 My configuration files for Windows and Linux.
 
 # Windows
-Located [here](./docs/Winodws.md).
+Located [here](./docs/Windows.md).
 
 # Linux 
 Located [here](./docs/Linux.md).
