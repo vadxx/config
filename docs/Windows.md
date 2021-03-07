@@ -3,6 +3,34 @@
 Soon
 ```
 
+# Install only Word, Excel, Powerpoint, Teams, Visio from Office365
+1. Download Office [Deployment Tool](https://www.microsoft.com/en-us/download/details.aspx?id=49117);
+2. Create `conf-o365.xml` file with this content:
+```bash
+    <Configuration>
+      <Add OfficeClientEdition="64" Channel="Monthly">
+        <Product ID="O365ProPlusRetail">
+          <Language ID="en-us" />
+          <ExcludeApp ID="Access" />
+          <ExcludeApp ID="Groove" />
+          <ExcludeApp ID="OneDrive" />
+          <ExcludeApp ID="OneNote" />
+          <ExcludeApp ID="Outlook" />
+          <ExcludeApp ID="Publisher" />
+          <ExcludeApp ID="Lync" />
+          <ExcludeApp ID="Bing" />
+        </Product>
+        <Product ID="VisioProRetail">
+          <Language ID="en-us" />
+        </Product>
+      </Add>
+    </Configuration>
+```
+3. Run setup with configuration:
+```bash
+    ./setup.exe /configure ./conf-o365.xml
+```
+
 # Fix volume control for BT audio
 1. Press `Win` and search `Registry Editor`;
 2. Go to :
