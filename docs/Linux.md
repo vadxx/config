@@ -13,6 +13,12 @@ Fix access to shared folders
 ```bash
 sudo usermod -aG vboxsf $USER
 ```
+Expand disk-size on Ubuntu
+```bash
+sudo apt install -y cloud-guest-utils
+sudo growpart /dev/sda 1
+sudo resize2fs /dev/sda1
+```
 
 Setup Git usage
 ```bash
