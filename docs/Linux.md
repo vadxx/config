@@ -4,6 +4,10 @@ Cleanup software after fresh install
 sudo apt remove -y geary libreoffice* gnome-contacts gnome-weather
 sudo apt -y autoremove
 ```
+Set Python 3 as Python by default
+```bash
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+```
 
 # Debian
 Soon...
