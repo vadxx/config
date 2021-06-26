@@ -37,5 +37,5 @@ git pull
 ```
 Enable connection to Xbox One Controller via Bluetooth
 ```bash
-sudo echo 1 > /sys/module/bluetooth/parameters/disable_ertm
+sudo sh -c "echo 1 > /sys/module/bluetooth/parameters/disable_ertm"
 ```
