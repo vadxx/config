@@ -35,3 +35,7 @@ git config credential.helper store
 git pull
 # fill login and password
 ```
+Enable connection to Xbox One Controller via Bluetooth
+```bash
+sudo echo 1 > /sys/module/bluetooth/parameters/disable_ertm
+```
