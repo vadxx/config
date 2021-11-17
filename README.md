@@ -1,18 +1,23 @@
-My configuration for fedora vm.
+My configuration for Fedora vm.
+```bash
+curl https://raw.githubusercontent.com/vadxx/config/main/setup.sh | bash
+```
 
 # Tmux
-
+Keybinds todo...
 
 # NeoVim
-
+```bash
+sudo dnf install -y neovim
+```
+Keybinds todo...
 
 # Core
 
 ```bash
 # dnf
-sudo nano /etc/dnf/dnf.conf:
-max_parallel_downloads=10
-fastestmirror=True
+echo "max_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf
+echo "fastestmirror=True" | sudo tee -a /etc/dnf/dnf.conf
 
 # vbox
 sudo usermod -aG vboxsf $USER
@@ -24,3 +29,4 @@ chsh -s /usr/bin/fish
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
 
 ```
+Do reboot `systemctl reboot` after Core Setup.
