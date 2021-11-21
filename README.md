@@ -1,4 +1,5 @@
 My configuration for Fedora vm.
+Install Neovim and Tmux configurations
 ```bash
 curl https://raw.githubusercontent.com/vadxx/config/main/setup.sh | bash
 ```
@@ -35,12 +36,13 @@ sudo ln -s /usr/bin/nvim /usr/local/bin/vim
 # ssh
 systemctl start sshd.service
 systemctl enable sshd.service
-
 ```
+Do reboot `systemctl reboot` after Core Setup.
+
 ## SSH forward
 Open the Settings for your VirtualBox machine and add configuration for forwarding ports as on the screenshot
 ![Forward port](./assets/vbox-ssh.png)
-
+Open your Windows powershell and do next.
 ```powershell
 mkdir .ssh
 ssh-keygen -t rsa -b 4096 -f "$HOME\.ssh\id_rsa-remote-ssh"
@@ -65,4 +67,4 @@ $pubKey=(Get-Content "$PUBKEYPATH" | Out-String); ssh -p 3022 "$USER_AT_HOST" "m
 ssh vm
 ```
 
-Do reboot `systemctl reboot` after Core Setup.
+
