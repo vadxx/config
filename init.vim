@@ -25,3 +25,6 @@ set clipboard+=unnamedplus " clipboard
 let @/ = ""		" clear search pattern
 set noeb vb t_vb=  " disable beep
 
+hi Comment ctermfg=green
+hi StatusLine ctermbg=none cterm=bold
+
