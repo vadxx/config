@@ -5,13 +5,23 @@ curl https://raw.githubusercontent.com/vadxx/config/main/setup.sh | bash
 ```
 
 # Tmux
-Keybinds todo...
+The ``` is prefix. Added keybinds:
+---|---
+prefix + k | kill panel
+prefix + v | split vertical
+prefix + h | split horizontal
+
 
 # NeoVim
-```bash
-sudo dnf install -y neovim
-```
-Keybinds todo...
+Added useful keybind `;` as `:`.
+
+- Added keybinds:
+---|---
+prefix + t | new tab
+prefix + - | split vertical
+prefix + \ | split horizontal
+visual mode + > | move selected lines right
+visual mode + < | move selected lines left
 
 # Core
 
@@ -25,7 +35,7 @@ sudo usermod -aG vboxsf $USER
 sudo ln -s /media/sf_G_DRIVE /vm
 
 # terminal
-sudo dnf install -y fish util-linux-user
+sudo dnf install -y fish util-linux-user neovim
 chsh -s /usr/bin/fish
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
 
