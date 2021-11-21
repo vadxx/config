@@ -17,14 +17,10 @@ nmap ;\ :vsplit<CR>
 nmap ;- :split<CR>
 nmap ;t :tabnew<CR>
 
-nmap <C-c> "+yy
-vmap <C-c> "+y
-nmap <C-v> "+pa
-imap <C-v> <Esc> "+pa
-set clipboard+=unnamedplus " clipboard
 let @/ = ""		" clear search pattern
 set noeb vb t_vb=  " disable beep
 
 hi Comment ctermfg=green
+hi LineNr term=bold ctermfg=DarkGrey
 hi StatusLine ctermbg=none cterm=bold
 
