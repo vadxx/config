@@ -5,7 +5,8 @@ curl https://raw.githubusercontent.com/vadxx/config/main/setup.sh | bash
 ```
 
 # Tmux
-The ``` is prefix. Added keybinds:
+The ` is prefix. Added keybinds:
+Keys | Desc
 ---|---
 prefix + k | kill panel
 prefix + v | split vertical
@@ -13,9 +14,9 @@ prefix + h | split horizontal
 
 
 # NeoVim
-Added useful keybind `;` as `:`.
+Added useful keybind `;` as `:`. Added keybinds:
 
-- Added keybinds:
+Keys | Desc
 ---|---
 prefix + t | new tab
 prefix + - | split vertical
@@ -50,8 +51,8 @@ systemctl enable sshd.service
 Do reboot `systemctl reboot` after Core Setup.
 
 ## SSH forward
-Open the Settings for your VirtualBox machine and add configuration for forwarding ports as on the screenshot
-![Forward port](./assets/vbox-ssh.png)
+Open the Settings for your VirtualBox machine and add configuration for forwarding ports as on the screenshot  
+![Forward port](./assets/vbox-ssh.png)  
 Open your Windows powershell and do next.
 ```powershell
 mkdir .ssh
