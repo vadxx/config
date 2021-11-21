@@ -28,5 +28,9 @@ sudo dnf install -y fish util-linux-user
 chsh -s /usr/bin/fish
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
 
+# replace vi and vim to nvim
+sudo ln -s /usr/bin/nvim /usr/local/bin/vi 
+sudo ln -s /usr/bin/nvim /usr/local/bin/vim
+
 ```
 Do reboot `systemctl reboot` after Core Setup.
