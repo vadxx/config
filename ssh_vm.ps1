@@ -15,8 +15,5 @@ Set-Content -Force -Path "$HOME\.ssh\config" -Value $conf
 
 $USER_AT_HOST="user@localhost"
 $PUBKEYPATH="$HOME\.ssh\id_rsa-remote-ssh.pub"
-$pubKey=(Get-Content "$PUBKEYPATH" | Out-String)
+$pubKey=(Get-Content "$PUBKEYPATH" | Out-String); ssh -p 3022 "$USER_AT_HOST" "mkdir -p ~/.ssh && chmod 700 ~/.ssh && echo '${pubKey}' >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
 
-$sh = "mkdir -p ~/.ssh && chmod 700 ~/.ssh && echo '${pubKey}' >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
-
-ssh -p 3022 "$USER_AT_HOST" $sh
