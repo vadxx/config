@@ -24,8 +24,14 @@ nmap ;t :tabnew<CR>
 set noswapfile
 set noeb vb t_vb=  " disable beep
 " plugins
-call plug#begin('~/.config/init.vim')
+call plug#begin('~/.config/plugged')
+Plug 'junegunn/fzf', { 'do': { -> fzf#install()} }
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
+set updatetime=100
 colorscheme gruvbox

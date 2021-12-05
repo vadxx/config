@@ -1,7 +1,7 @@
 My minimalistic configuration for Unix.  
 Install these deps (`sudo dnf install -y`):
 ```bash
-fish exa neovim util-linux-user
+fish exa neovim util-linux-user ripgrep
 ```
 Then run the script:
 ```bash
@@ -16,7 +16,7 @@ prefix + k | kill panel
 prefix + v | split vertical
 prefix + h | split horizontal
 
-# NeoVim
+# Nvim 
 Added useful keybind `;` as `:`. Added keybinds:
 
 Keys | Desc
@@ -26,6 +26,15 @@ prefix + - | split vertical
 prefix + \ | split horizontal
 visual mode + > | move selected lines right
 visual mode + < | move selected lines left
+
+# Fish
+Added keybinds:
+Keys | Desc
+---|---
+g | git
+ll | exa: list of nodes
+la | exa: list of all nodes
+lt | exa: tree of nodes
 
 # Core
 Configure Fedora and VBox:
