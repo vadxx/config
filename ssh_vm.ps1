@@ -19,4 +19,4 @@ $pubKey=(Get-Content "$PUBKEYPATH" | Out-String)
 
 $sh = "mkdir -p ~/.ssh && chmod 700 ~/.ssh && echo '${pubKey}' >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
 
-ssh -p 3022 "$USER_AT_HOST" $shp
+ssh -p 3022 "$USER_AT_HOST" $sh
