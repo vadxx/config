@@ -1,4 +1,4 @@
-New-Item -ItemTye Directory -Force -Path $HOME\.ssh
+New-Item -ItemType Directory -Force -Path $HOME\.ssh
 ssh-keygen -t rsa -b 4096 -f "$HOME\.ssh\id_rsa-remote-ssh"
 echo "press Enter multiple times"
 
