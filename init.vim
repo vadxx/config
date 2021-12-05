@@ -21,6 +21,7 @@ nmap ;h :vsplit<CR>
 nmap ;v :split<CR>
 nmap ;t :tabnew<CR>
 " extra
+set noswapfile
 set noeb vb t_vb=  " disable beep
 " plugins
 call plug#begin('~/.config/init.vim')

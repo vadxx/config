@@ -36,6 +36,7 @@ echo "fastestmirror=True" | sudo tee -a /etc/dnf/dnf.conf
 # vbox - share drive G to vm
 sudo usermod -aG vboxsf $USER
 sudo ln -s /media/sf_G_DRIVE /vm
+# enable SSH
 systemctl start sshd.service
 systemctl enable sshd.service
 # optional fonts
