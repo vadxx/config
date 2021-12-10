@@ -13,8 +13,8 @@ curl -o $NVIM_DIR/init.vim https://raw.githubusercontent.com/vadxx/config/main/i
 curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+nvim +PlugInstall +qall!
 source $FISH_DIR/config.fish
 tmux source-file ~/$TMUX_C
-vi +PlugInstall +qall!
 
 
