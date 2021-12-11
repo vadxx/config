@@ -25,6 +25,7 @@ set noswapfile
 set noeb vb t_vb=  " disable beep
 " plugins
 call plug#begin('~/.config/plugged')
+Plug 'ojroques/vim-oscyank'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install()} }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
@@ -33,5 +34,6 @@ Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 call plug#end()
 
+au TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | OSCYankReg " | endif
 set updatetime=100
 colorscheme gruvbox
