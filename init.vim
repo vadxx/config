@@ -34,6 +34,6 @@ Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 call plug#end()
 
-au TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | OSCYankReg " | endif
 set updatetime=100
+au TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | OSCYankReg " | endif
 colorscheme gruvbox
