@@ -1,7 +1,7 @@
 # Overview
-My minimalistic configuration for Unix.
-Contains settings for `Neovim`, `Tmux`, `Fish`, `SSH from Windows`.
-If you working from Windows do [setup SSH](./docs/SSH.md)
+My minimalistic configuration for Unix.  
+Contains settings for `Neovim`, `Tmux`, `Fish`, `SSH from Windows`.  
+If you working from Windows do [setup SSH](./docs/SSH.md).  
 Install these deps (`sudo dnf install -y`):
 ```bash
 fish exa neovim util-linux-user ripgrep gitui
