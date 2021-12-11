@@ -8,7 +8,7 @@ systemctl enable sshd.service
 
 ## SSH forward
 Open the Settings for your VirtualBox VM and add configuration for forwarding ports as on the screen  
-![Forward port](./assets/vbox-ssh.png)  
+![Forward port](../assets/vbox-ssh.png)  
 Open your Windows powershell and run script:
 ```powershell
 iex (iwr -useb https://raw.githubusercontent.com/vadxx/config/main/ssh_vm.ps1)
