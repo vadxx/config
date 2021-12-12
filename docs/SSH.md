@@ -19,7 +19,8 @@ ssh vm
 ```
 
 ## Clipboard over SSH
-If you need to copy/paste text from NVIM while SSH session from Windows
-install the Windows Terminal then use `y` to copy selected text. 
-Read more [details here](https://github.com/ojroques/vim-oscyank)
+If you need to copy/paste text from NVIM while SSH session from Windows:  
+
+Install the `Windows Terminal` and use `y` to copy selected text.  
+Read more [details here](https://github.com/ojroques/vim-oscyank).
 
