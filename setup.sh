@@ -4,7 +4,7 @@ FISH_DIR=$CONF_DIR/fish
 TMUX_C=.tmux.conf
 mkdir -p $NVIM_DIR
 
-chsh -s /usr/bin/fish
+sudo usermod --shell (which fish) $USER
 mkdir -p $NVIM_DIR $FISH_DIR
 
 curl -o ~/$TMUX_C https://raw.githubusercontent.com/vadxx/config/main/$TMUX_C
