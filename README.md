@@ -1,14 +1,19 @@
 # Overview
 My minimalistic configuration for Unix.  
 Contains settings for `Neovim`, `Tmux`, `Fish`, `SSH from Windows`.  
-If you working from Windows do [setup SSH](./docs/SSH.md).  
+
+## Install
+**If you working from Windows do [setup SSH](./docs/SSH.md).**
+
 Install these deps (`sudo dnf install -y`):
 ```bash
-fish exa neovim util-linux-user ripgrep gitui
+fish exa neovim ripgrep gitui
 ```
 Then run the script:
 ```bash
 curl https://raw.githubusercontent.com/vadxx/config/main/setup.sh | sh
+```
+Do logout for change the default shell from `bash` to `fish`.
 Optional fonts
 ```bash 
 curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh | sh
@@ -17,7 +22,7 @@ curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/inst
 # Keybinds
 Here is [detailed description](./docs/KEYS.md)
 
-Installed plugins:
+Installed plugins for `Neovim`:
 ```bash
 vimplug gruvbox fzf fugitive gitgutter oscyank
 ```
