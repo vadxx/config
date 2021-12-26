@@ -6,7 +6,7 @@ set mouse=a
 set showmatch	" show a matching pair of brackets
 set clipboard=unnamedplus
 set autoread
-set complete-=i
+set completeopt+=menuone,noinsert
 " tabs
 set autoindent " indent when moving to next line while coding
 set expandtab	" expand tabs into spaces
@@ -20,6 +20,8 @@ vmap > >gv
 nmap ;h :vsplit<CR> 
 nmap ;v :split<CR>
 nmap ;t :tabnew<CR>
+nmap ;fg :Rg<CR>
+nmap ;ff :Files<CR>
 " extra
 set noswapfile
 set noeb vb t_vb=  " disable beep
