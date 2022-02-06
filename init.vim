@@ -29,8 +29,8 @@ set updatetime=100
 " plugins
 call plug#begin('~/.config/plugged')
 Plug 'ojroques/vim-oscyank'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install()} }
-Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
@@ -39,9 +39,12 @@ Plug 'preservim/nerdtree'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 " plugins keybinds
-nnoremap <C-b> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
 au TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | OSCYankReg " | endif
+" fzf
+nmap ;ff <CMD>Telescope find_files<CR>
+nmap ;fg <CMD>Telescope live_grep<CR>
+" tree
+nmap <silent> <expr> <C-e> g:NERDTree.IsOpen() ? ":NERDTreeClose<CR>" : bufexists(expand('%')) ? ":NERDTreeFind<CR>" : ":NERDTree<CR>"
 " custom look
 let g:lightline = { 'colorscheme' : 'wombat' }
 colorscheme gruvbox
