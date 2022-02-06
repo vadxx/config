@@ -36,6 +36,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 " plugins keybinds
 nnoremap <C-b> :NERDTreeToggle<CR>
@@ -45,3 +46,19 @@ au TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | OSCYankR
 let g:lightline = { 'colorscheme' : 'wombat' }
 colorscheme gruvbox
 set bg=dark
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {},
+  sync_install = false,
+  ignore_install = {},
+  highlight = { enable = true },
+  autopairs = { enable = true },
+  context_commentstring = { 
+    enable = true,
+    enable_autocmd = false,
+  },
+  indent = { enable = true },
+  autotag = { enable = true },
+}
+EOF
