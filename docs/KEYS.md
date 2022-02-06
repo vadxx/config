@@ -16,8 +16,11 @@ Keys | Desc:
 prefix + t | new tab
 prefix + - | split vertical
 prefix + \ | split horizontal
+prefix + ff | find files
+prefix + fg | live grep
 visual mode + > | move selected lines right
 visual mode + < | move selected lines left
+ctrl + e | open file explorer (tree)
 
 # Fish
 Added keybinds:
