@@ -1,3 +1,4 @@
+alias tmux="tmux -2"
 alias exa="exa --long --header --git"
 alias la="exa -a"
 alias ll="exa -l"
