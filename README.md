@@ -7,7 +7,7 @@ Contains settings for `Neovim`, `Tmux`, `Fish`, `SSH from Windows`.
 
 Install these deps (`sudo dnf install -y`):
 ```bash
-fish exa neovim ripgrep gitui
+fish exa neovim ripgrep
 ```
 Then run the script:
 ```bash
@@ -24,7 +24,7 @@ Here is [detailed description](./docs/KEYS.md)
 
 Installed plugins for `Neovim`:
 ```bash
-vimplug gruvbox fzf fugitive gitgutter oscyank
+vimplug gruvbox nerdtree telescope fugitive gitgutter oscyank treesitter
 ```
 
 # Fedora
