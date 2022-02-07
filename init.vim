@@ -112,7 +112,7 @@ cmp.setup {
     end,
   },
   documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    border = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
   },
   completion = {
     keyword_length = 2,
