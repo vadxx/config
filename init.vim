@@ -23,6 +23,7 @@ nmap ;t :tabnew<CR>
 nmap ;fg :Rg<CR>
 nmap ;ff :Files<CR>
 " extra
+set noshowmode
 set noswapfile
 set noeb vb t_vb=  " disable beep
 set updatetime=100
@@ -37,6 +38,8 @@ Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
 call plug#end()
 " plugins keybinds
 au TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | OSCYankReg " | endif
