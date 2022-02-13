@@ -46,6 +46,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-path'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
+Plug 'terrortylor/nvim-comment'
 call plug#end()
 " plugins keybinds
 au TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | OSCYankReg " | endif
@@ -62,6 +63,8 @@ colorscheme gruvbox
 set bg=dark
 " LSP
 lua <<EOF
+require('nvim_comment').setup()
+
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {},
   sync_install = false,
