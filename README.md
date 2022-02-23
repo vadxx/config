@@ -1,31 +1,33 @@
 # Overview
 My minimalistic configuration for Unix.  
-Contains settings for `Neovim`, `Tmux`, `Fish`, `SSH from Windows`.  
 
-## Install
-**If you working from Windows do [setup SSH](./docs/SSH.md).**
+**Configure [Neovim here](https://github.com/vad56/my-nvim).**
+**If you working from Windows do [setup SSH](./SSH.md).**
 
-Install these deps (`sudo dnf install -y`):
+Dependencies:
 ```bash
-fish exa neovim ripgrep
-```
-Then run the script:
-```bash
-curl https://raw.githubusercontent.com/vadxx/config/main/setup.sh | sh
-```
-Do logout for change the default shell from `bash` to `fish`.
-Optional fonts
-```bash 
-curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh | sh
+tmux fish exa neovim ripgrep
 ```
 
 # Keybinds
-Here is [detailed description](./docs/KEYS.md)
 
-Installed plugins for `Neovim`:
-```bash
-vimplug gruvbox nerdtree telescope fugitive gitgutter oscyank treesitter
-```
+# Tmux
+The ` is prefix. Added keybinds:
+Keys | Desc
+---|---
+prefix + k | kill panel
+prefix + v | split vertical
+prefix + h | split horizontal
+
+# Fish
+Added keybinds:
+Keys | Desc
+---|---
+g | git
+ll | exa: list of nodes
+la | exa: list of all nodes
+lt | exa: tree of nodes
+
 
 # Fedora
 Configure Fedora and VBox:
@@ -37,10 +39,3 @@ echo "fastestmirror=True" | sudo tee -a /etc/dnf/dnf.conf
 sudo usermod -aG vboxsf $USER
 sudo ln -s /media/sf_G_DRIVE /vm
 ```
-
-# Uninstall
-Run the script to remove configs for Neovim, Tmux, Fish:
-```bash
-curl https://raw.githubusercontent.com/vadxx/config/main/uninstall.sh | sh
-```
-
