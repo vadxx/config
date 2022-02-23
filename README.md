@@ -1,8 +1,8 @@
 # Overview
 My minimalistic configuration for Unix.  
 
-**Configure [Neovim here](https://github.com/vad56/my-nvim).**
-**If you working from Windows do [setup SSH](./SSH.md).**
+**Configure [Neovim is here](https://github.com/vad56/my-nvim).**
+**If you working from Windows do [setup of SSH](./SSH.md).**
 
 ![demo](./assets/demo.png) 
 
