@@ -4,6 +4,9 @@ My minimalistic configuration for Unix.
 **Configure [Neovim here](https://github.com/vad56/my-nvim).**
 **If you working from Windows do [setup SSH](./SSH.md).**
 
+![demo](./assets/demo.png) 
+
+
 Dependencies:
 ```bash
 tmux fish exa neovim ripgrep

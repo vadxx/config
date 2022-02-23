@@ -23,3 +23,7 @@ If you need to copy/paste text from NVIM while SSH session from Windows:
 Install the `Windows Terminal` and use `y` to copy selected text.  
 Read more [details here](https://github.com/ojroques/vim-oscyank).
 
+## Shortcut to media drive from Windows
+```bash
+sudo ln -s /media/sf_D_DRIVE /vm
+```
