@@ -11,23 +11,27 @@ tmux fish exa neovim ripgrep
 
 # Keybinds
 
-# Tmux
-The ` is prefix. Added keybinds:
+<table>
+<tr> <th>Tmux</th> <th>Fish</th> </tr>
+<tr><td>
+
 Keys | Desc
 ---|---
-prefix + k | kill panel
-prefix + v | split vertical
-prefix + h | split horizontal
+` + k | kill panel
+` + v | split vertical
+` + h | split horizontal
+  
+</td><td>
 
-# Fish
-Added keybinds:
 Keys | Desc
 ---|---
 g | git
 ll | exa: list of nodes
 la | exa: list of all nodes
 lt | exa: tree of nodes
-
+  
+</td></tr>
+</table>
 
 # Fedora
 Configure Fedora and VBox:
