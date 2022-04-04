@@ -1,6 +1,9 @@
 # Overview
 Here is a guide how to work with Linux VM from Windows host.
+
+## Prepare your Linux VM
 ```bash
+# make sure that you have 'openssh-server' installed
 systemctl start sshd.service
 systemctl enable sshd.service
 ```
@@ -10,7 +13,11 @@ Open the Settings for your VirtualBox VM and add configuration for forwarding po
 ![Forward port](./assets/vbox-ssh.png)  
 Open your Windows powershell and run script:
 ```powershell
-iex (iwr -useb https://raw.githubusercontent.com/vad56/config/main/ssh_vm.ps1)
+# run this as admin first:
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+iwr https://raw.githubusercontent.com/vad56/config/main/ssh_vm.ps1 -out ssh.ps1;
+# 1 - alias on Windows; 2 - login on VM; 3 - IP of VM; 4 - port of VM;
+.\ssh.ps1 ubuntu-vm user localhost 3022
 ```
 Usage:
 ```powershell
