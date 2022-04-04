@@ -9,8 +9,9 @@ My minimalistic configuration for Unix.
 
 Dependencies:
 ```bash
-tmux fish exa neovim ripgrep
+curl tmux fish exa neovim ripgrep
 ```
+Note: install [`Gith Auth: gh`](https://github.com/cli/cli#installation)
 
 # Keybinds
 
@@ -36,13 +37,20 @@ lt | exa: tree of nodes
 </td></tr>
 </table>
 
+# Vbox
+```bash
+# vbox - share drive G to vm
+sudo usermod -aG vboxsf $USER
+sudo ln -s /media/sf_G_DRIVE /vm
+```
 # Fedora
-Configure Fedora and VBox:
 ```bash
 # dnf
 echo "max_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf
 echo "fastestmirror=True" | sudo tee -a /etc/dnf/dnf.conf
-# vbox - share drive G to vm
-sudo usermod -aG vboxsf $USER
-sudo ln -s /media/sf_G_DRIVE /vm
+```
+
+# Ubuntu
+```bash
+soon...
 ```
