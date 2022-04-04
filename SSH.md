@@ -6,7 +6,11 @@ Here is a guide how to work with Linux VM from Windows host.
 # make sure that you have 'openssh-server' installed
 systemctl start sshd.service
 systemctl enable sshd.service
+# check your ip
+ip a
+# use it as described bottom
 ```
+![Forward port](./assets/linux-ip.png)  
 
 ## SSH forward
 #### VirtualBox
@@ -16,7 +20,7 @@ Open the Settings for your VirtualBox VM and add configuration for forwarding po
 #### VMware
 Open `C:\ProgramData\VMware\vmnetnat.conf` using text editor and paste it here:  
 ![Forward port](./assets/vmware-ssh.png)  
-Example: `3023 = 192.168.27.128:22`
+Example: `3023 = 192.168.152.128:22`
 ```powershell
 # then run it from windows as admin:
 net stop "VMWare NAT Service"
@@ -27,13 +31,13 @@ net start "VMWare NAT Service"
 ```powershell
 # run this as admin first:
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
-iwr https://raw.githubusercontent.com/vad56/config/main/ssh_vm.ps1 -out ssh.ps1;
+iwr https://raw.githubusercontent.com/vad56/config/main/ssh_vm.ps1 -out ssh.ps1
+.\ssh.ps1 ubuntu-vm user localhost 3023
 # 1 - alias on Windows; 2 - login on VM; 3 - IP of VM; 4 - port of VM;
-.\ssh.ps1 ubuntu-vm user localhost 3022
 ```
 Usage:
 ```powershell
-ssh vm 
+ssh vm # or ubuntu-vm
 ```
 
 ## Clipboard over SSH
