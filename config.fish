@@ -6,3 +6,7 @@ alias lt="exa -T"
 alias g="git"
 alias vi="nvim"
 alias vim="nvim"
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+export TERM="screen-256color"
