@@ -17,6 +17,10 @@ Notes:
   ```bash
     gh auth login # configure it as HTTPS and paste your token
   ```
+* Set `fish` as default shell:
+  ```bash
+  chsh -s /usr/bin/fish
+  ```
 
 
 # Keybinds
