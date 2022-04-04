@@ -9,9 +9,21 @@ systemctl enable sshd.service
 ```
 
 ## SSH forward
+#### VirtualBox
 Open the Settings for your VirtualBox VM and add configuration for forwarding ports as on the screen  
-![Forward port](./assets/vbox-ssh.png)  
-Open your Windows powershell and run script:
+![Forward port](./assets/vbox-ssh.png)
+
+#### VMware
+Open `C:\ProgramData\VMware\vmnetnat.conf` using text editor and paste it here:  
+![Forward port](./assets/vmware-ssh.png)  
+Example: `3023 = 192.168.27.128:22`
+```powershell
+# then run it from windows as admin:
+net stop "VMWare NAT Service"
+net start "VMWare NAT Service"
+```
+
+## Open your Windows powershell and run script:
 ```powershell
 # run this as admin first:
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
