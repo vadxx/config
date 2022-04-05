@@ -1,21 +1,18 @@
-# Overview
 My minimalistic configuration for Unix.  
-
-**Configure [Neovim is here](https://github.com/vad56/my-nvim).**
-**If you working from Windows do [setup of SSH](./SSH.md).**
-
 ![demo](./assets/demo.png) 
-
-
 Dependencies:
 ```bash
 curl tmux fish exa
 ```
-Notes: 
+Notes:
+* Do **[setup of SSH](./SSH.md)** from Windows
+* My [Neovim is here](https://github.com/vad56/my-nvim)
 * [Ubuntu 20.04: install `exa`](https://github.com/vad56/config/#ubuntu)
 * [`Gith Auth: gh`](https://github.com/cli/cli#installation)
   ```bash
     gh auth login # configure it as HTTPS and paste your token
+    git config user.name <first name and lastname>
+    git config user.email <your email>
   ```
 * Set `fish` as default shell:
   ```bash
@@ -23,7 +20,7 @@ Notes:
   ```
 
 
-# Keybinds
+### Keybinds
 
 <table>
 <tr> <th>Tmux</th> <th>Fish</th> </tr>
@@ -47,20 +44,20 @@ lt | exa: tree of nodes
 </td></tr>
 </table>
 
-# Vbox
+## Vbox
 ```bash
 # vbox - share drive G to vm
 sudo usermod -aG vboxsf $USER
 sudo ln -s /media/sf_G_DRIVE /vm
 ```
-# Fedora
+## Fedora
 ```bash
 # dnf
 echo "max_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf
 echo "fastestmirror=True" | sudo tee -a /etc/dnf/dnf.conf
 ```
 
-# Ubuntu
+## Ubuntu
 ```bash
 # install exa
 EXA_VERSION=$(curl -s "https://api.github.com/repos/ogham/exa/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
