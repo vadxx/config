@@ -9,10 +9,10 @@ My minimalistic configuration for Unix.
 
 Dependencies:
 ```bash
-curl tmux fish exa neovim ripgrep
+curl tmux fish exa
 ```
 Notes: 
-* [Ubuntu 20.04: install `exa`](https://github.com/vad56/config/edit/main/README.md#ubuntu)
+* [Ubuntu 20.04: install `exa`](https://github.com/vad56/config/#ubuntu)
 * [`Gith Auth: gh`](https://github.com/cli/cli#installation)
   ```bash
     gh auth login # configure it as HTTPS and paste your token
