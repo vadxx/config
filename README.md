@@ -14,6 +14,10 @@ Notes:
     git config user.name <first name and lastname>
     git config user.email <your email>
   ```
+* Fedora stuff:
+  ```bash
+  util-linux-user
+  ```
 * Set `fish` as default shell:
   ```bash
   chsh -s /usr/bin/fish
