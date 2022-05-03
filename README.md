@@ -1,19 +1,20 @@
 ![demo](./assets/demo.png) 
-Dependencies:
+
+## Dependencies:
 ```bash
 curl tmux fish exa ranger
 util-linux-user # fedora stuff
 ```
-
-# Install
+## Install
 ```bash
-
+git clone https://github.com/vadxx/config.git $HOME/.config
+cd $HOME/.config && rm -rf .git assets # remove unnecessary files
 ```
 
 Notes:
-* `[setup of SSH](https://github.com/vadxx/remote-ssh)` from Windows
-* `[Neovim is here](https://github.com/vadxx/my-nvim)`
-* Set `fish` as default shell:
+* [`Setup SSH`](https://github.com/vadxx/remote-ssh) from Windows
+* [`Neovim`](https://github.com/vadxx/my-nvim) config
+* Set default shell:
   ```bash
   chsh -s /usr/bin/fish
   ```
