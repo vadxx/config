@@ -1,3 +1,5 @@
+set PATH $HOME/.local/bin $PATH
+
 alias exa "exa --icons --header --git"
 alias ls "exa -G"
 alias la "exa -a"
