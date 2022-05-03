@@ -11,6 +11,6 @@ alias g git
 alias vi nvim
 alias vim nvim
 
-export EDITOR=nvim
-export VISUAL=nvim
-export TERM="xterm-256color"
+set EDITOR nvim
+set VISUAL nvim
+set TERM screen-256color
