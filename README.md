@@ -7,8 +7,8 @@ util-linux-user # fedora stuff
 ```
 ## Install
 ```bash
-git clone https://github.com/vadxx/config.git $HOME/.config
-cd $HOME/.config && rm -rf .git assets # remove unnecessary files
+git clone https://github.com/vadxx/config.git
+mkdir -p ~/.config && cp -r config/tmux config/fish ~/.config
 ```
 
 Notes:
