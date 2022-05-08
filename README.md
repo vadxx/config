@@ -2,7 +2,7 @@
 
 ## Dependencies:
 ```bash
-curl tmux fish exa ranger
+curl tmux fish exa ranger gitui bat ripgrep fd-find
 util-linux-user # fedora stuff
 ```
 ## Install
@@ -13,7 +13,7 @@ mkdir -p ~/.config && cp -r config/tmux config/fish ~/.config
 
 Notes:
 * [`Setup SSH`](https://github.com/vadxx/remote-ssh) from Windows
-* [`Neovim`](https://github.com/vadxx/my-nvim) config
+* [`Neovim`](https://github.com/vadxx/nvim) config
 * Set default shell:
   ```bash
   chsh -s /usr/bin/fish
@@ -39,13 +39,15 @@ Keys | Desc
 g | git
 ll | exa: list of nodes
 la | exa: list of all nodes
-lt | exa: tree of nodes
+lt <num> | exa: tree of nodes
+lta <num> | exa: tree of all nodes
   
 </td></tr>
 </table>
 
 ## Git
 ```bash
+git config --global init.defaultBranch main
 git config user.name <first name and lastname>
 git config user.email <your email>
 git config --global credential.helper store
