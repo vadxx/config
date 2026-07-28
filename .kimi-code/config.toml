@@ -1,0 +1,11 @@
+default_permission_mode = "auto"
+
+[[permission.rules]]
+decision = "deny"
+scope = "user"
+pattern = "*git push*"
+reason = "Block git push commands"
+
+[thinking]
+enabled = true
+effort = "high"
