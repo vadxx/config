@@ -1,0 +1,1 @@
+export PATH=$PATH:~/.opencode/bin:~/.kimi-code/bin
