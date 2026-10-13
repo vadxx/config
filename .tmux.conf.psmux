@@ -1,19 +1,18 @@
-# Unix: ~/.tmux.conf
+# Move to: ~/.tmux.conf
 
 unbind C-b
 set -g prefix `
 bind-key ` last-window
 bind-key e send-prefix
 
-bind h split-window -h
-bind v split-window -v
+bind h split-window -h -c "#{pane_current_path}"
+bind v split-window -v -c "#{pane_current_path}"
+bind c new-window -c "#{pane_current_path}"
 bind k killp
 
 set -g focus-events on
 set -g mouse on
 set -g status-position bottom
-set -g status-bg colour234
-set -g status-fg colour137
 set -g status-left ''
 set -g status-right '#[fg=colour233,bg=colour241,bold] %d/%m #[fg=colour233,bg=colour245,bold] %H:%M:%S '
 setw -g mode-keys vi
@@ -28,8 +27,8 @@ set -g set-clipboard on
 set-option -g history-limit 5000
 set-option -sg escape-time 10
 
-set -g extended-keys on
-
 # psmux stuff:
+# workaround for psmux#600: warm-pane rehome types PowerShell syntax into bash
+set -g warm off
 set -g status-style "fg=colour137,bg=colour234"
-set -g default-shell "C:\Program Files\Git\git-bash.exe" --cd-to-home
+set -g default-shell "C:\\Program Files\\Git\\bin\\bash.exe"
