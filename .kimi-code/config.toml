@@ -1,11 +1,285 @@
-default_permission_mode = "auto"
+# Put this config to: ~/.kimi-code/config.toml
 
-[[permission.rules]]
-decision = "deny"
-scope = "user"
-pattern = "*git push*"
-reason = "Block git push commands"
+# PLUGINS: - Install manually in TUI:
+# /plugins install https://github.com/obra/superpowers
+
+# Then run /reload or start a new session.
+
+
+# Best default: K2.8 - low - yolo
+# When needed, manually set: K3-256 - low or high
+default_model = "kimi-code/kimi-for-coding"
+default_permission_mode = "yolo"
 
 [thinking]
 enabled = true
-effort = "high"
+effort = "low"
+
+[providers."managed:kimi-code"]
+type = "kimi"
+api_key = ""
+base_url = "https://api.kimi.ai/coding/v1"
+
+[providers."managed:kimi-code".oauth]
+storage = "file"
+key = "oauth/kimi-code-env-0e4f99c69cc27850"
+oauth_host = "https://auth.kimi.ai"
+
+[models."kimi-code/kimi-for-coding"]
+provider = "managed:kimi-code"
+model = "kimi-for-coding"
+max_context_size = 1048576
+capabilities = [ "thinking", "always_thinking", "image_in", "video_in", "tool_use", "dynamically_loaded_tools" ]
+display_name = "K2.8 Preview"
+support_efforts = [ "low", "high", "max" ]
+default_effort = "max"
+
+[models."kimi-code/kimi-for-coding-highspeed"]
+provider = "managed:kimi-code"
+model = "kimi-for-coding-highspeed"
+max_context_size = 262144
+capabilities = [ "thinking", "always_thinking", "image_in", "video_in", "tool_use" ]
+display_name = "K2.7 Code Highspeed"
+
+[models."kimi-code/k3"]
+provider = "managed:kimi-code"
+model = "k3"
+max_context_size = 1048576
+capabilities = [ "thinking", "always_thinking", "image_in", "video_in", "tool_use", "dynamically_loaded_tools" ]
+display_name = "K3"
+support_efforts = [ "low", "high", "max" ]
+default_effort = "high"
+
+[models."kimi-code/k3-256k"]
+provider = "managed:kimi-code"
+model = "k3-256k"
+max_context_size = 262144
+capabilities = [ "thinking", "always_thinking", "image_in", "tool_use", "dynamically_loaded_tools" ]
+display_name = "K3-256k"
+support_efforts = [ "low", "high", "max" ]
+default_effort = "high"
+
+[models."kimi-code/k3.1-pro"]
+provider = "managed:kimi-code"
+model = "k3.1-pro"
+max_context_size = 1048576
+capabilities = [ "thinking", "always_thinking", "image_in", "video_in", "tool_use", "dynamically_loaded_tools" ]
+display_name = "K3.1 Pro"
+support_efforts = [ "low", "high", "max" ]
+default_effort = "high"
+
+[models."kimi-code/k3.1-pro-highspeed"]
+provider = "managed:kimi-code"
+model = "k3.1-pro-highspeed"
+max_context_size = 1048576
+capabilities = [ "thinking", "always_thinking", "image_in", "video_in", "tool_use", "dynamically_loaded_tools" ]
+display_name = "K3.1 Pro Highspeed"
+support_efforts = [ "low", "high", "max" ]
+default_effort = "high"
+
+[services.moonshot_search]
+base_url = "https://api.kimi.ai/coding/v1/search"
+api_key = ""
+
+[services.moonshot_search.oauth]
+storage = "file"
+key = "oauth/kimi-code-env-0e4f99c69cc27850"
+oauth_host = "https://auth.kimi.ai"
+
+[services.moonshot_fetch]
+base_url = "https://api.kimi.ai/coding/v1/fetch"
+api_key = ""
+
+[services.moonshot_fetch.oauth]
+storage = "file"
+key = "oauth/kimi-code-env-0e4f99c69cc27850"
+oauth_host = "https://auth.kimi.ai"
+
+# Deny rules that work even in auto (never-ask) mode:
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*git push*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*git rebase*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*git filter-branch*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*git update-ref -d*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*git reset --hard*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*git clean -f*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*git checkout --*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*git restore*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*git stash*drop*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*git stash*clear*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*git branch -D*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*rm -rf*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*rm -fr*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*shred*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*wipefs*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*mkfs*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*dd of=*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*sudo*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*shutdown*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*reboot*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*poweroff*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*systemctl*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*pkill*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*killall*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*taskkill*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*docker rm*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*docker rmi*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*docker volume rm*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*docker system prune*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*docker compose down*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*docker push*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*psql*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*mysql*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*mongosh*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*redis-cli*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*sqlite3*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*npm publish*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*twine upload*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*cargo publish*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*gh pr*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*gh issue*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*gh release*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*gh repo*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*ssh *)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*scp*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*rsync*)"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*sftp*)"
