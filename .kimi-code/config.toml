@@ -6,9 +6,9 @@
 # Then run /reload or start a new session.
 
 
-# Best default: K2.8 - low - yolo
+# Best default: K3.1 - low - yolo
 # When needed, manually set: K3-256 - low or high
-default_model = "kimi-code/kimi-for-coding"
+default_model = "kimi-code/k3.1-pro"
 default_permission_mode = "yolo"
 
 [thinking]
