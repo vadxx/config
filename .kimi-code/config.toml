@@ -8,7 +8,7 @@
 
 # Best default: K3.1 - low - yolo
 # When needed, manually set: K3-256 - low or high
-default_model = "kimi-code/k3.1-pro"
+default_model = "kimi-code/k3-256k"
 default_permission_mode = "yolo"
 
 [thinking]
