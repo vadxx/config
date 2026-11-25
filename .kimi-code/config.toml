@@ -5,281 +5,249 @@
 
 # Then run /reload or start a new session.
 
-
-# Best default: K3.1 - low - yolo
-# When needed, manually set: K3-256 - low or high
-default_model = "kimi-code/k3-256k"
 default_permission_mode = "yolo"
+default_model = "kimi-code/kimi-for-coding"
 
 [thinking]
 enabled = true
 effort = "low"
 
-[providers."managed:kimi-code"]
-type = "kimi"
-api_key = ""
-base_url = "https://api.kimi.ai/coding/v1"
+[secondary_model]
+default_model = "orcarouter"
 
-[providers."managed:kimi-code".oauth]
-storage = "file"
-key = "oauth/kimi-code-env-0e4f99c69cc27850"
-oauth_host = "https://auth.kimi.ai"
+[providers."managed:kimi-code"]                                                                                       
+type = "kimi"                                                                                                         
+base_url = "https://api.kimi.ai/coding/v1"                                                                            
+api_key_env = "KIMI_CODE_API_KEY"
 
-[models."kimi-code/kimi-for-coding"]
-provider = "managed:kimi-code"
-model = "kimi-for-coding"
-max_context_size = 1048576
-capabilities = [ "thinking", "always_thinking", "image_in", "video_in", "tool_use", "dynamically_loaded_tools" ]
-display_name = "K2.8 Preview"
-support_efforts = [ "low", "high", "max" ]
-default_effort = "max"
+[providers.orcarouter]
+type = "openai"
+base_url = "https://api.orcarouter.ai/v1"
+api_key_env = "ORCAROUTER_API_KEY"
 
-[models."kimi-code/kimi-for-coding-highspeed"]
-provider = "managed:kimi-code"
-model = "kimi-for-coding-highspeed"
+[models.orcarouter]
+provider = "orcarouter"
+model = "deepseek/deepseek-v4.1-flash-free"
+display_name = "DeepSeek Flash (orca)"
+max_context_size = 200000
+
+[models."kimi-code/kimi-for-coding".overrides]
 max_context_size = 262144
-capabilities = [ "thinking", "always_thinking", "image_in", "video_in", "tool_use" ]
-display_name = "K2.7 Code Highspeed"
+capabilities = [ "thinking", "image_in", "video_in", "tool_use", "dynamically_loaded_tools"]
+display_name = "K2.8 Pre256k"
+default_effort = "low"
 
-[models."kimi-code/k3"]
-provider = "managed:kimi-code"
-model = "k3"
-max_context_size = 1048576
-capabilities = [ "thinking", "always_thinking", "image_in", "video_in", "tool_use", "dynamically_loaded_tools" ]
-display_name = "K3"
-support_efforts = [ "low", "high", "max" ]
-default_effort = "high"
-
-[models."kimi-code/k3-256k"]
-provider = "managed:kimi-code"
-model = "k3-256k"
-max_context_size = 262144
-capabilities = [ "thinking", "always_thinking", "image_in", "tool_use", "dynamically_loaded_tools" ]
-display_name = "K3-256k"
-support_efforts = [ "low", "high", "max" ]
-default_effort = "high"
-
-[models."kimi-code/k3.1-pro"]
-provider = "managed:kimi-code"
-model = "k3.1-pro"
-max_context_size = 1048576
-capabilities = [ "thinking", "always_thinking", "image_in", "video_in", "tool_use", "dynamically_loaded_tools" ]
-display_name = "K3.1 Pro"
-support_efforts = [ "low", "high", "max" ]
-default_effort = "high"
-
-[models."kimi-code/k3.1-pro-highspeed"]
-provider = "managed:kimi-code"
-model = "k3.1-pro-highspeed"
-max_context_size = 1048576
-capabilities = [ "thinking", "always_thinking", "image_in", "video_in", "tool_use", "dynamically_loaded_tools" ]
-display_name = "K3.1 Pro Highspeed"
-support_efforts = [ "low", "high", "max" ]
-default_effort = "high"
-
-[services.moonshot_search]
-base_url = "https://api.kimi.ai/coding/v1/search"
-api_key = ""
-
-[services.moonshot_search.oauth]
-storage = "file"
-key = "oauth/kimi-code-env-0e4f99c69cc27850"
-oauth_host = "https://auth.kimi.ai"
-
-[services.moonshot_fetch]
-base_url = "https://api.kimi.ai/coding/v1/fetch"
-api_key = ""
-
-[services.moonshot_fetch.oauth]
-storage = "file"
-key = "oauth/kimi-code-env-0e4f99c69cc27850"
-oauth_host = "https://auth.kimi.ai"
-
-# Deny rules that work even in auto (never-ask) mode:
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*git push*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*git rebase*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*git filter-branch*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*git update-ref -d*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*git reset --hard*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*git clean -f*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*git checkout --*)"
 
 [[permission.rules]]
 decision = "deny"
-pattern = "Bash(*git restore*)"
-
-[[permission.rules]]
-decision = "deny"
+scope = "user"
 pattern = "Bash(*git stash*drop*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*git stash*clear*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*git branch -D*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*rm -rf*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*rm -fr*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*shred*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*wipefs*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*mkfs*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*dd of=*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*sudo*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*shutdown*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*reboot*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*poweroff*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*systemctl*)"
 
 [[permission.rules]]
 decision = "deny"
-pattern = "Bash(*pkill*)"
-
-[[permission.rules]]
-decision = "deny"
+scope = "user"
 pattern = "Bash(*killall*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*taskkill*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*docker rm*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*docker rmi*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*docker volume rm*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*docker system prune*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*docker compose down*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*docker push*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*psql*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*mysql*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*mongosh*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*redis-cli*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*sqlite3*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*npm publish*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*twine upload*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*cargo publish*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*gh pr*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*gh issue*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*gh release*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*gh repo*)"
 
 [[permission.rules]]
 decision = "deny"
-pattern = "Bash(*ssh *)"
-
-[[permission.rules]]
-decision = "deny"
-pattern = "Bash(*scp*)"
-
-[[permission.rules]]
-decision = "deny"
+scope = "user"
 pattern = "Bash(*rsync*)"
 
 [[permission.rules]]
 decision = "deny"
+scope = "user"
 pattern = "Bash(*sftp*)"
